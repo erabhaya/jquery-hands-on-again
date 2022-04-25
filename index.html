@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>main</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      .important {
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <table id="table">
+        <tr class="tr">
+          <th class="th">Company</th>
+          <th class="th">Contact</th>
+          <th class="th">Country</th>
+        </tr>
+        <tr class="tr">
+          <td class="td">HUL</td>
+          <td class="td">Ashish</td>
+          <td class="td">British</td>
+        </tr>
+        <tr class="tr">
+          <td class="td">Reliance</td>
+          <td class="td">Ravi</td>
+          <td class="td">India</td>
+        </tr>
+        <tr class="tr">
+          <td class="td">Colgate</td>
+          <td class="td">Sushil</td>
+          <td class="td">Saudi</td>
+        </tr>
+        <tr>
+          <td class="td">Sagar</td>
+          <td class="td">Anoop</td>
+          <td class="td">MP</td>
+        </tr>
+        <tr class="tr">
+          <td class="td">Proprofs</td>
+          <td class="td">Annu</td>
+          <td class="td">London</td>
+        </tr>
+        <tr class="tr">
+          <td class="td">ABB Limited</td>
+          <td class="td">Giovanni Rovelli</td>
+          <td class="td">Italy</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#table").find("tr:gt(7)").remove();
+      });
+      $("#button2").click(function () {
+        $(".table").find("tr:eq(2)").remove();
+      });
+    </script>
+
+    <form>
+      <input type="checkbox" name="color" value="Bike" />Red
+      <input type="checkbox" name="color" value="Car" />Green
+      <input type="checkbox" name="color" value="Car" />Blue
+      <input type="checkbox" name="color" value="Car" />Black
+    </form>
+    <p></p>
+
+    <script>
+      var count_Checked = function () {
+        var n = $("input:checked").length;
+        $("p").text(n + (n === 1 ? " is" : " are") + " checked.");
+      };
+      count_Checked();
+      $("input[type=checkbox]").on("click", count_Checked);
+    </script>
+
+    <div class="jq">
+      <h1>friends</h1>
+      <p>Hi Abhay</p>
+      <button>Hello</button>
+      <input type="text" placeholder="do something great" />
+    </div>
+    <script>
+      $(".jq").empty();
+    </script>
+    <div id="div1">This is some text.</div>
+    <div id="div2">This is some text.</div>
+    <br />
+
+    <button>Add classes to first div element</button>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $("#div1").addClass("important blue");
+        });
+      });
+    </script>
+  </body>
 </html>

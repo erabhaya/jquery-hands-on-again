@@ -25,6 +25,9 @@
       tr:nth-child(even) td:nth-child(even) {
         background-color: #ccc;
       }
+      button{
+        width: 100px;height: 100px;
+      }
     </style>
   </head>
   <body>
@@ -137,4 +140,69 @@
       $("#myButton").html("Shukla");
     });
   </script>
+ 
+<button id="a" class="apple">Apple</button>
+<button id="b" class="nokia">nokia</button>
+<button id="c" class="samsung">samsung</button>
+<button id="d" class="oneplus">oneplus</button>
+<div class="clss">
+<script>
+    $(document).ready(function () {
+            $("#a").click(function () {
+                var getClass = this.className;
+                console.log(getClass);
+            });
+            $("#b").click(function () {
+                var getClass = this.className;
+                console.log(getClass);
+            });
+            $("#c").click(function () {
+                var getClass = this.className;
+                console.log(getClass);
+            });
+            $("#d").click(function () {
+                var getClass = this.className;
+                console.log(getClass);
+            });
+        });
+  </script>
+</div>
+<div class="drop">
+  <select name="pg_dropdown" id="pg_dropdown">
+    <option value="cedcoss">CedCoss</option>
+    <option value="cedcommerce">CedCommerce</option>
+    <option value="makeweb" selected="selected">MakewebBetter</option>
+    </select>
+    
+    <div id="add">Add</div>
+    
+    <input type="text" name="pg_input" id="pg_input" />
+    <script>
+       $(document).ready(function(){
+    $('#add').click(function() {
+        var program = $("#pg_dropdown").val(); //get value of selected option
+        var programs = $('#pg_input').val().split(",");
+        if (programs[0] == "") {
+            programs.pop()
+        }
+
+        if ($.inArray(program, programs) == -1) {
+            programs.push(program);
+        }
+
+        $('#pg_input').val(programs.join(',')); //add to text input
+    }); 
+});
+    </script>
+    <p>hello everyone</p>
+
+    <script>
+      $("p").css({
+        "background-color":"green",
+        "color":"white",
+        "font-size":"25px",
+        "padding":"15px"
+      });
+    </script>
+</div>
 </html>
